@@ -1,0 +1,20 @@
+.change-log-box{
+  height: 200px;
+  border: 1px;
+}
+
+.change-log-title{
+  display: inline-block;
+}
+
+.change-log-content{
+
+}
+
+.change-log-date{
+  display: inline-block;
+}
+
+.change-log-header{
+  width: 100%;
+}
