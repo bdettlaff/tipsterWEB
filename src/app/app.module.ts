@@ -1,21 +1,29 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpClientModule } from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ModulesListComponent } from './components/modules-list/modules-list.component';
 import { ChangeLogComponent } from './components/change-log/change-log.component';
 import { AlertModule } from 'ngx-bootstrap';
+import { AddChangeLogComponent } from './components/add-change-log/add-change-log.component';
+import { ChangeLogListComponent } from './components/change-log-list/change-log-list.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     ModulesListComponent,
-    ChangeLogComponent
+    ChangeLogComponent,
+    AddChangeLogComponent,
+    ChangeLogListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
     AlertModule.forRoot()
   ],
   providers: [],

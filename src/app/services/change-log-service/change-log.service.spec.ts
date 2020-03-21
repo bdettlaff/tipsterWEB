@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ChangeLogServiceService } from './change-log-service.service';
+import { ChangeLogService } from './change-log.service';
 
 describe('ChangeLogServiceService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: ChangeLogServiceService = TestBed.get(ChangeLogServiceService);
+    const service: ChangeLogService = TestBed.get(ChangeLogService);
     expect(service).toBeTruthy();
   });
 });
