@@ -9,6 +9,9 @@ import { AlertModule } from 'ngx-bootstrap';
 import { AddChangeLogComponent } from './components/add-change-log/add-change-log.component';
 import { ChangeLogListComponent } from './components/change-log-list/change-log-list.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatInputModule, MatTableModule} from "@angular/material";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+
 
 @NgModule({
   declarations: [
@@ -24,6 +27,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    MatTableModule,
+    MatInputModule,
+    BrowserAnimationsModule,
     AlertModule.forRoot()
   ],
   providers: [],

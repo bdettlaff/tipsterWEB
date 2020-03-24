@@ -27,7 +27,7 @@ export class ChangeLogService {
   }
 
   getAllChangeLogs(): Observable<ChangeLogWithDate[]> {
-    return this.http.post<ChangeLogWithDate[]>(this.localUrl + '/changelog/get/list', httpOptions);
+    return this.http.get<ChangeLogWithDate[]>(this.localUrl + '/changelog/get/list', httpOptions);
   }
 
   deleteChangeLogs(changeLogId: number): Observable<number> {
