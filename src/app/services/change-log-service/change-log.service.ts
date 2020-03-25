@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { AddChangeLogDto} from 'src/app/dtos/AddChangeLogDto';
 import { ChangeLogWithDate} from 'src/app/dtos/ChangeLogWithDate';
 import {add} from "ngx-bootstrap/chronos";
+import {environment} from "../../../environments/environment";
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -21,17 +22,19 @@ export class ChangeLogService {
 
   constructor(private http: HttpClient) { }
 
-  localUrl = 'http://localhost:2137';
+
 
   addChangeLog(addChangeLogDto: AddChangeLogDto): Observable<AddChangeLogDto> {
-    return this.http.post<AddChangeLogDto>(this.localUrl + '/changelog/add', addChangeLogDto, httpOptions);
+    return this.http.post<AddChangeLogDto>(environment.apiUrl + '/changelog/add', addChangeLogDto, httpOptions);
   }
 
   getAllChangeLogs(): Observable<ChangeLogWithDate[]> {
-    return this.http.get<ChangeLogWithDate[]>(this.localUrl + '/changelog/get/list', httpOptions);
+    return this.http.get<ChangeLogWithDate[]>(environment.apiUrl + '/changelog/get/list', httpOptions);
   }
 
   deleteChangeLogs(changeLogId: number): Observable<number> {
-    return this.http.post<number>(this.localUrl + '/changelog/delete/' + changeLogId, httpOptions);
+    return this.http.post<number>(environment.apiUrl + '/changelog/delete/' + changeLogId, httpOptions);
   }
+
+
 }
