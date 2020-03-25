@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { AddChangeLog} from 'src/app/dtos/AddChangeLog';
+import { AddChangeLogDto} from 'src/app/dtos/AddChangeLogDto';
 import { ChangeLogWithDate} from 'src/app/dtos/ChangeLogWithDate';
+import {add} from "ngx-bootstrap/chronos";
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -22,8 +23,8 @@ export class ChangeLogService {
 
   localUrl = 'http://localhost:2137';
 
-  addChangeLog(addChangeLog: AddChangeLog): Observable<AddChangeLog> {
-    return this.http.post<AddChangeLog>(this.localUrl + '/changelog/add', this.addChangeLog);
+  addChangeLog(addChangeLogDto: AddChangeLogDto): Observable<AddChangeLogDto> {
+    return this.http.post<AddChangeLogDto>(this.localUrl + '/changelog/add', addChangeLogDto, httpOptions);
   }
 
   getAllChangeLogs(): Observable<ChangeLogWithDate[]> {

@@ -2,25 +2,26 @@
   <div class="col-md-3"></div>
   <div class="col-md-6 justify-content-center text-center">
     <h3>Dodaj nowy wpis</h3>
-    <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+    <form >
 
-      <div>
+      <div class="form-row">
         <label for="title">
-          Tytuł
+          Tytuł:
         </label>
-        <input id="title" type="text" formControlName="title">
-      </div>
-    
-      <div>
-        <label for="content">
-          Treść
-        </label>
-        <input id="content" type="text" formControlName="content">
+        <input id="title" type="text" [(ngModel)]="this.title" name="title">
       </div>
 
-      <button class="button">Wyczyść</button>
-      <button class="button" type="submit">Zapisz</button>
-    
+      <div class="form-row">
+        <label for="content">
+          Treść:
+        </label>
+        <input id="content" type="text" [(ngModel)]="this.content" name="content">
+      </div>
+      <br>
+      <div class="button-section">
+        <button mat-raised-button>Wyczyść</button><button mat-raised-button (click)=addChangeLog()>Zapisz</button>
+      </div>
+
     </form>
   </div>
   <div class="col-md-3"></div>

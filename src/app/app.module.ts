@@ -9,8 +9,10 @@ import { AlertModule } from 'ngx-bootstrap';
 import { AddChangeLogComponent } from './components/add-change-log/add-change-log.component';
 import { ChangeLogListComponent } from './components/change-log-list/change-log-list.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {MatInputModule, MatTableModule} from "@angular/material";
+import {MatButtonModule, MatButtonToggleModule, MatInputModule, MatTableModule} from "@angular/material";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {ToastrModule} from "ngx-toastr";
+import {CommonModule} from "@angular/common";
 
 
 @NgModule({
@@ -22,6 +24,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     ChangeLogListComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
@@ -29,7 +32,10 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     ReactiveFormsModule,
     MatTableModule,
     MatInputModule,
+    MatButtonModule,
+    MatButtonToggleModule,
     BrowserAnimationsModule,
+    ToastrModule.forRoot(),
     AlertModule.forRoot()
   ],
   providers: [],

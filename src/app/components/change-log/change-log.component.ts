@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {MatTableDataSource} from "@angular/material";
+import {ChangeLogService} from "../../services/change-log-service/change-log.service";
 
 @Component({
   selector: 'app-change-log',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChangeLogComponent implements OnInit {
 
-  constructor() { }
+  changeLogWithDate: any;
+  constructor(private changeLogService: ChangeLogService) { }
 
   ngOnInit() {
+    this.getChangeLogWithDateList();
   }
 
+  getChangeLogWithDateList() {
+    this.changeLogService.getAllChangeLogs().subscribe(
+      data => {
+        this.changeLogWithDate = data;
+      },
+      error => {
+        console.log(error);
+      },
+      () => {
+      }
+    );
+  }
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {MatTableDataSource} from "@angular/material";
 import {ChangeLogWithDate} from "../../dtos/ChangeLogWithDate";
 import {ChangeLogService} from "../../services/change-log-service/change-log.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-change-log-list',
@@ -20,7 +21,7 @@ export class ChangeLogListComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  constructor(private changeLogService: ChangeLogService) { }
+  constructor(private changeLogService: ChangeLogService, public router: Router) { }
 
   ngOnInit() {
     this.getChangeLogWithDateList();

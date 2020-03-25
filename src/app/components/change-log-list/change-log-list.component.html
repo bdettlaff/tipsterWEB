@@ -28,6 +28,10 @@
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
+    <br>
+    <div class="button-section">
+      <button mat-raised-button>Powrót</button><button mat-raised-button (click)="this.router.navigate(['/add-change-log' ]);">Dodaj nowy wpis</button>
+    </div>
 
   </div>
   <div class="col-md-2"></div>

@@ -6,3 +6,7 @@ table{
   width: 100%;
 }
 
+.button-section>button{
+  margin-left: 1%;
+  margin-right: 1%;
+}
