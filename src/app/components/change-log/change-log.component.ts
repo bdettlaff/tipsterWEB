@@ -13,11 +13,11 @@ export class ChangeLogComponent implements OnInit {
   constructor(private changeLogService: ChangeLogService) { }
 
   ngOnInit() {
-    this.getChangeLogWithDateList();
+    this.getLastThreeChangeLogs();
   }
 
-  getChangeLogWithDateList() {
-    this.changeLogService.getAllChangeLogs().subscribe(
+  getLastThreeChangeLogs() {
+    this.changeLogService.getLastThreeChangeLogs().subscribe(
       data => {
         this.changeLogWithDate = data;
       },

@@ -22,8 +22,6 @@ export class ChangeLogService {
 
   constructor(private http: HttpClient) { }
 
-
-
   addChangeLog(addChangeLogDto: AddChangeLogDto): Observable<AddChangeLogDto> {
     return this.http.post<AddChangeLogDto>(environment.apiUrl + '/changelog/add', addChangeLogDto, httpOptions);
   }
@@ -36,5 +34,8 @@ export class ChangeLogService {
     return this.http.post<number>(environment.apiUrl + '/changelog/delete/' + changeLogId, httpOptions);
   }
 
+  getLastThreeChangeLogs(): Observable<ChangeLogWithDate[]> {
+    return this.http.get<ChangeLogWithDate[]>(environment.apiUrl + '/changelog/get/last/three', httpOptions);
+  }
 
 }
