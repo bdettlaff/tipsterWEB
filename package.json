@@ -29,7 +29,7 @@
     "angular-webstorage-service": "^1.0.2",
     "bootstrap": "^3.4.1",
     "core-js": "2.4.1",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "jquery": "^3.4.1",
     "jw-bootstrap-switch-ng2": "2.0.1",
     "ng2-nouislider": "1.7.12",
